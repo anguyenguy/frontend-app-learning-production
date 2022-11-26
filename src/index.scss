@@ -385,19 +385,6 @@
   color: #0D7DFC;
 }
 
-a {
-  transition: all 0.3s;
-}
-
-a, a:hover {
-  text-decoration: none;
-  transition: all 0.3s ease-in-out 0s;
-  -moz-transition: all 0.3s ease-in-out 0s;
-  -o-transition: all 0.3s ease-in-out 0s;
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  -ms-transition: all 0.3s ease-in-out 0s;
-}
-
 .view-course .breadcrumbs li:after {
   display: inline-block;
   vertical-align: middle;
@@ -453,10 +440,6 @@ ul.tab--controll {
   background: none !important;
 }
 
-a {
-  transition: all 0.3s !important;
-}
-
 .view-course ul.tab--controll li a:hover {
   font-weight: 500;
   color: #0D7DFC;
@@ -479,7 +462,6 @@ a {
   bottom: 0px;
   left: 0;
   background-color: #0D7DFC;
-  transition: all 0.3s;
 }
 
 .view-course .tab--content .view-course-course {
