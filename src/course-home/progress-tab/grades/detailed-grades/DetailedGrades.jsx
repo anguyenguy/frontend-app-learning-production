@@ -1,61 +1,65 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { sendTrackEvent } from '@edx/frontend-platform/analytics';
-import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
-import { FormattedMessage, injectIntl, intlShape } from '@edx/frontend-platform/i18n';
-import { Blocked } from '@edx/paragon/icons';
-import { Icon, Hyperlink } from '@edx/paragon';
-import { useModel } from '../../../../generic/model-store';
-import {faBroom} from '@fortawesome/free-solid-svg-icons';
+// import { sendTrackEvent } from '@edx/frontend-platform/analytics';
+// import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
+// import { FormattedMessage, injectIntl, intlShape } from '@edx/frontend-platform/i18n';
+import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
+// import { Blocked } from '@edx/paragon/icons';
+// import { Icon, Hyperlink } from '@edx/paragon';
+// import { Hyperlink } from '@edx/paragon';
+import { faBroom } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useModel } from '../../../../generic/model-store';
 
 import DetailedGradesTable from './DetailedGradesTable';
 
-import messages from '../messages';
+// import messages from '../messages';
 
 function DetailedGrades({ intl }) {
-  const { administrator } = getAuthenticatedUser();
+  // const { administrator } = getAuthenticatedUser();
+  console.log(intl);
   const {
     courseId,
   } = useSelector(state => state.courseHome);
+  // const {
+  //   org,
+  // } = useModel('courseHomeMeta', courseId);
   const {
-    org,
-  } = useModel('courseHomeMeta', courseId);
-  const {
-    gradesFeatureIsFullyLocked,
-    gradesFeatureIsPartiallyLocked,
+    // gradesFeatureIsFullyLocked,
+    // gradesFeatureIsPartiallyLocked,
     sectionScores,
   } = useModel('progress', courseId);
 
   const hasSectionScores = sectionScores.length > 0;
 
-  const logOutlineLinkClick = () => {
-    sendTrackEvent('edx.ui.lms.course_progress.detailed_grades.course_outline_link.clicked', {
-      org_key: org,
-      courserun_key: courseId,
-      is_staff: administrator,
-    });
-  };
+  // const logOutlineLinkClick = () => {
+  //   sendTrackEvent('edx.ui.lms.course_progress.detailed_grades.course_outline_link.clicked', {
+  //     org_key: org,
+  //     courserun_key: courseId,
+  //     is_staff: administrator,
+  //   });
+  // };
 
-  const outlineLink = (
-    <Hyperlink
-      variant="muted"
-      isInline
-      destination={`/course/${courseId}/home`}
-      onClick={logOutlineLinkClick}
-      tabIndex={gradesFeatureIsFullyLocked ? '-1' : '0'}
-    >
-      {intl.formatMessage(messages.courseOutline)}
-    </Hyperlink>
-  );
+  // const outlineLink = (
+  //   <Hyperlink
+  //     variant="muted"
+  //     isInline
+  //     destination={`/course/${courseId}/home`}
+  //     onClick={logOutlineLinkClick}
+  //     tabIndex={gradesFeatureIsFullyLocked ? '-1' : '0'}
+  //   >
+  //     {intl.formatMessage(messages.courseOutline)}
+  //   </Hyperlink>
+  // );
 
   return (
     // <section classNameName="text-dark-700">
     //   <h3 classNameName="h4 mb-3">{intl.formatMessage(messages.detailedGrades)}</h3>
     //   {gradesFeatureIsPartiallyLocked && (
     //     <div classNameName="mb-3 small ml-0 d-inline">
-    //       <Icon classNameName="mr-1 mt-1 d-inline-flex" style={{ height: '1rem', width: '1rem' }} src={Blocked} data-testid="blocked-icon" />
+    // <Icon classNameName="mr-1 mt-1 d-inline-flex" style={{ height: '1rem', width: '1rem' }}
+    // src={Blocked} data-testid="blocked-icon" />
     //       {intl.formatMessage(messages.gradeSummaryLimitedAccessExplanation)}
     //     </div>
     //   )}

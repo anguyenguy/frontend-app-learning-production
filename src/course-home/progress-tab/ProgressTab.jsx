@@ -1,27 +1,28 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { breakpoints, useWindowSize } from '@edx/paragon';
+// import { useSelector } from 'react-redux';
+// import { breakpoints, useWindowSize } from '@edx/paragon';
+import { useWindowSize } from '@edx/paragon';
 
-import CertificateStatus from './certificate-status/CertificateStatus';
-import CourseCompletion from './course-completion/CourseCompletion';
-import CourseGrade from './grades/course-grade/CourseGrade';
+// import CertificateStatus from './certificate-status/CertificateStatus';
+// import CourseCompletion from './course-completion/CourseCompletion';
+// import CourseGrade from './grades/course-grade/CourseGrade';
 import DetailedGrades from './grades/detailed-grades/DetailedGrades';
-import GradeSummary from './grades/grade-summary/GradeSummary';
-import ProgressHeader from './ProgressHeader';
-import RelatedLinks from './related-links/RelatedLinks';
+// import GradeSummary from './grades/grade-summary/GradeSummary';
+// import ProgressHeader from './ProgressHeader';
+// import RelatedLinks from './related-links/RelatedLinks';
 
-import { useModel } from '../../generic/model-store';
+// import { useModel } from '../../generic/model-store';
 
 function ProgressTab() {
-  const {
-    courseId,
-  } = useSelector(state => state.courseHome);
+  // const {
+  //   courseId,
+  // } = useSelector(state => state.courseHome);
 
-  const {
-    gradesFeatureIsFullyLocked,
-  } = useModel('progress', courseId);
+  // const {
+  //   gradesFeatureIsFullyLocked,
+  // } = useModel('progress', courseId);
 
-  const applyLockedOverlay = gradesFeatureIsFullyLocked ? 'locked-overlay' : '';
+  // const applyLockedOverlay = gradesFeatureIsFullyLocked ? 'locked-overlay' : '';
 
   const windowWidth = useWindowSize().width;
   if (windowWidth === undefined) {
@@ -31,7 +32,7 @@ function ProgressTab() {
     return null;
   }
 
-  const wideScreen = windowWidth >= breakpoints.large.minWidth;
+  // const wideScreen = windowWidth >= breakpoints.large.minWidth;
   return (
     <>
       {/* <ProgressHeader />
@@ -41,7 +42,7 @@ function ProgressTab() {
           <CourseCompletion />
           {!wideScreen && <CertificateStatus />}
           <CourseGrade />
-          <div className={`grades my-4 p-4 rounded raised-card ${applyLockedOverlay}`} aria-hidden={gradesFeatureIsFullyLocked}> 
+ <div className={`grades my-4 p-4 rounded raised-card ${applyLockedOverlay}`} aria-hidden={gradesFeatureIsFullyLocked}>
             <GradeSummary />
             <DetailedGrades />
           </div>
@@ -59,9 +60,9 @@ function ProgressTab() {
             <DetailedGrades />
           </div>
           <div className="tab-right">
-            <div className="overlay"></div>
+            <div className="overlay" />
             <div className="remove">
-              <i className="icon-remove"></i>
+              <i className="icon-remove" />
             </div>
             <ul>
               <li className="current--item"><a href="#progress-quiz">Quiz</a></li>

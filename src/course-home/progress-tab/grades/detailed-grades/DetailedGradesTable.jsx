@@ -3,16 +3,17 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
-import { DataTable } from '@edx/paragon';
+// import { DataTable } from '@edx/paragon';
 
 import { useModel } from '../../../../generic/model-store';
-import messages from '../messages';
-import SubsectionTitleCell from './SubsectionTitleCell';
-import { subscribe } from '@edx/frontend-platform';
-import {faCheck, faExclamation} from '@fortawesome/free-solid-svg-icons';
+// import messages from '../messages';
+// import SubsectionTitleCell from './SubsectionTitleCell';
+// import { subscribe } from '@edx/frontend-platform';
+import { faCheck, faExclamation } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function DetailedGradesTable({ intl }) {
+  console.log(intl);
   const {
     courseId,
   } = useSelector(state => state.courseHome);
@@ -37,54 +38,55 @@ function DetailedGradesTable({ intl }) {
 
       // const detailedGradesData = subsectionScores.map((subsection) => ({
       //   subsectionTitle: <SubsectionTitleCell subsection={subsection} />,
-      //   score: <span className={subsection.learnerHasAccess ? '' : 'greyed-out'}>{subsection.numPointsEarned}/{subsection.numPointsPossible}</span>,
+      //   score: <span className={subsection.learnerHasAccess ?
+      // '' : 'greyed-out'}>{subsection.numPointsEarned}/{subsection.numPointsPossible}</span>,
       // }));
 
       return (
-        // <div className="my-3" key={`${chapter.displayName}-grades-table`}>
-        //   <DataTable
-        //     data={detailedGradesData}
-        //     itemCount={detailedGradesData.length}
-        //     columns={[
-        //       {
-        //         Header: chapter.displayName,
-        //         accessor: 'subsectionTitle',
-        //         headerClassName: 'h5 mb-0',
-        //         cellClassName: 'mw-100',
-        //       },
-        //       {
-        //         Header: `${intl.formatMessage(messages.score)}`,
-        //         accessor: 'score',
-        //         headerClassName: 'justify-content-end h5 mb-0',
-        //         cellClassName: 'align-top text-right small',
-        //       },
-        //     ]}
-        //   >
-        //     <DataTable.Table />
-        //   </DataTable>
-        // </div>
-      <>
-        {subsectionScores.map(subscribe => (
-          <div className="item--progress d-flex">
-            <div className="left d-flex-items">
-              <div className={subscribe.numPointsEarned > 0 ? 'icon check' : 'icon'}>
-                <FontAwesomeIcon icon={subscribe.numPointsEarned > 0 ? faCheck : faExclamation}/>
+      // <div className="my-3" key={`${chapter.displayName}-grades-table`}>
+      //   <DataTable
+      //     data={detailedGradesData}
+      //     itemCount={detailedGradesData.length}
+      //     columns={[
+      //       {
+      //         Header: chapter.displayName,
+      //         accessor: 'subsectionTitle',
+      //         headerClassName: 'h5 mb-0',
+      //         cellClassName: 'mw-100',
+      //       },
+      //       {
+      //         Header: `${intl.formatMessage(messages.score)}`,
+      //         accessor: 'score',
+      //         headerClassName: 'justify-content-end h5 mb-0',
+      //         cellClassName: 'align-top text-right small',
+      //       },
+      //     ]}
+      //   >
+      //     <DataTable.Table />
+      //   </DataTable>
+      // </div>
+        <>
+          {subsectionScores.map(subscribe => (
+            <div className="item--progress d-flex">
+              <div className="left d-flex-items">
+                <div className={subscribe.numPointsEarned > 0 ? 'icon check' : 'icon'}>
+                  <FontAwesomeIcon icon={subscribe.numPointsEarned > 0 ? faCheck : faExclamation} />
+                </div>
+                <h4>Quiz {subscribe.displayName.split('.')[0].split(' ')[1]}</h4>
               </div>
-              <h4>Quiz {subscribe.displayName.split('.')[0].split(' ')[1]}</h4>
+              <div className="right d-flex-items">
+                <div className="points-total">
+                  <div className="point-achie" style={{ width: `${subscribe.percentGraded * 100}%` }} />
+                </div>
+                <div className="points-number">
+                  <span>{subscribe.numPointsEarned}</span>
+                  <span>/</span>
+                  <span>{subscribe.numPointsPossible}</span>
+                </div>
+              </div>
             </div>
-            <div className="right d-flex-items">
-              <div className="points-total">
-                <div className="point-achie" style={{width: subscribe.percentGraded*100 +'%'}}/>
-              </div>
-              <div className="points-number">
-                <span>{subscribe.numPointsEarned}</span>
-                <span>/</span>
-                <span>{subscribe.numPointsPossible}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </>
+          ))}
+        </>
       );
     })
   );

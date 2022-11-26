@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { sendTrackEvent } from '@edx/frontend-platform/analytics';
-import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
+// import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { history } from '@edx/frontend-platform';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { Button } from '@edx/paragon';
@@ -97,18 +97,18 @@ function OutlineTab({ intl }) {
     });
   };
 
-  const isEnterpriseUser = () => {
-    const authenticatedUser = getAuthenticatedUser();
-    const userRoleNames = authenticatedUser ? authenticatedUser.roles.map(role => role.split(':')[0]) : [];
+  // const isEnterpriseUser = () => {
+  //   const authenticatedUser = getAuthenticatedUser();
+  //   const userRoleNames = authenticatedUser ? authenticatedUser.roles.map(role => role.split(':')[0]) : [];
 
-    return userRoleNames.includes('enterprise_learner');
-  };
+  //   return userRoleNames.includes('enterprise_learner');
+  // };
 
   /** [[MM-P2P] Experiment */
   const MMP2P = initHomeMMP2P(courseId);
 
   /** show post enrolment survey to only B2C learners */
-  const learnerType = isEnterpriseUser() ? 'enterprise_learner' : 'b2c_learner';
+  // const learnerType = isEnterpriseUser() ? 'enterprise_learner' : 'b2c_learner';
 
   const location = useLocation();
 
