@@ -4,9 +4,9 @@ import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
 
-import Footer from '@edx/frontend-component-footer';
+import Footer from '@anguyenguy/frontend-component-footer';
 import { Toast } from '@edx/paragon';
-import Header from '@edx/frontend-component-header';
+import Header from '@anguyenguy/frontend-component-header';
 import PageLoading from '../generic/PageLoading';
 import { getAccessDeniedRedirectUrl } from '../shared/access';
 import { useModel } from '../generic/model-store';
