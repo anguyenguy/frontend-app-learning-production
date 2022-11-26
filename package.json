@@ -21,7 +21,7 @@
   },
   "author": "edX",
   "license": "AGPL-3.0",
-  "homepage": "https://apps.lilac.funix.edu.vn",
+  "homepage": ".",
   "publishConfig": {
     "access": "public"
   },
