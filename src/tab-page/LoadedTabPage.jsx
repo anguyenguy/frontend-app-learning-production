@@ -80,11 +80,11 @@ function LoadedTabPage({
             <div className="breadcrumbs-page">
               <ul className="breadcrumbs">
                 <li style={{color: "#0D7DFC"}}>
-                  <a style={{marginRight: "15px"}} href="#">Course </a>
+                  <a style={{marginRight: "15px"}} href={ tabs[0].url.includes(".edu.vn") ? "https://lilac.funix.edu.vn" : "http://local.overhang.io:8000/"}>Course </a>
                   <FontAwesomeIcon icon={faChevronRight} />
                 </li>
                 <li>
-                  <a href="#">Trở thành công dân số</a>
+                  <a href={tabs[0].url}>{title}</a>
                 </li>
               </ul>
             </div>
