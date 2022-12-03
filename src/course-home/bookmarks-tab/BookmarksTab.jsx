@@ -15,11 +15,10 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { generatePath, useHistory } from 'react-router';
 import { useParams } from 'react-router-dom';
-import { useIFrameHeight, useIFramePluginEvents } from '../../generic/hooks';
-import { getBookmarksTabData } from '../data/api';
 import { BsFillBookmarkFill } from 'react-icons/bs';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { FcPrevious, FcNext } from 'react-icons/fc';
+import { getBookmarksTabData } from '../data/api';
 
 function BookmarksTab() {
   const { courseId } = useSelector(state => state.courseHome);
