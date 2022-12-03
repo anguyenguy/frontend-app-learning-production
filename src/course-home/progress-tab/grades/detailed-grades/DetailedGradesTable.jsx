@@ -9,8 +9,9 @@ import { useModel } from '../../../../generic/model-store';
 // import messages from '../messages';
 // import SubsectionTitleCell from './SubsectionTitleCell';
 // import { subscribe } from '@edx/frontend-platform';
-import { faCheck, faExclamation } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faExclamation, faSpellCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { HiOutlineXMark } from "react-icons/hi2";
 
 function DetailedGradesTable({ intl }) {
   console.log(intl);
@@ -67,10 +68,10 @@ function DetailedGradesTable({ intl }) {
       // </div>
         <>
           {subsectionScores.map(subscribe => (
-            <div className="item--progress d-flex">
+            <div className="item--progress d-flex" key={subscribe.blockKey}>
               <div className="left d-flex-items">
                 <div className={subscribe.numPointsEarned > 0 ? 'icon check' : 'icon'}>
-                  <FontAwesomeIcon icon={subscribe.numPointsEarned > 0 ? faCheck : faExclamation} />
+                  {subscribe.numPointsEarned > 0 ? <FontAwesomeIcon icon={faCheck} /> : <HiOutlineXMark />}
                 </div>
                 <h4>Quiz {subscribe.displayName.split('.')[0].split(' ')[1]}</h4>
               </div>

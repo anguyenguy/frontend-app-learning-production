@@ -409,13 +409,19 @@
   flex-wrap: nowrap;
 }
 
+
 ul.tab--controll {
   list-style-type: none;
-  border-bottom: 1px solid #E5E5E5;
   overflow: hidden;
   overflow-x: auto;
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
+}
+
+.view-course .tab{
+  border-bottom: 1px solid #E5E5E5;
+  height: 35px;
+  margin-bottom:20px;
 }
 
 .view-course ul.tab--controll li {
@@ -777,6 +783,166 @@ h3 {
 .small{
   margin-left: 0px !important
 }
+
+.view-course {
+  margin-top: 50px;
+}
+
+.view-objectives {
+  margin-bottom: 133px;
+}
+
+.view-objectives .courses-tabs {
+  display: flex;
+  margin-top: 44px;
+}
+
+.view-objectives .courses-tabs .nav-tabs {
+  position: relative;
+  border: none;
+  width: 226px;
+  transition: width 0.5s ease-in-out;
+  margin-right: 50px;
+}
+
+.view-objectives .courses-tabs .tab-content {
+  width: calc(100% - 226px);
+  min-height: 800px;
+}
+
+.view-objectives .courses-tabs .nav-tabs .title-tabs h3 {
+  font-family: "San Francisco Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  text-align: center;
+  color: #0D7DFC;
+  margin-bottom: 0;
+}
+
+.view-objectives .courses-tabs .nav-tabs .title-tabs {
+  padding: 9px;
+  padding-right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.view-objectives .courses-tabs .nav-tabs ul {
+  margin-top: 17px;
+}
+
+.view-objectives .courses-tabs .nav-tabs ul li.active {
+  background-color: #F8F9FC;
+}
+
+.view-objectives .courses-tabs .nav-tabs ul li {
+  position: relative;
+  list-style: none;
+  padding: 15px 10px;
+  margin-left: 0px;
+}
+
+.view-objectives .courses-tabs .nav-tabs ul li:hover {
+  cursor: pointer;
+}
+
+.view-objectives .courses-tabs .nav-tabs ul li.active a {
+  color: #0D7DFC;
+  font-weight: 500;
+}
+
+.view-objectives .courses-tabs .nav-tabs ul li a {
+  font-family: #0D7DFC;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #4C4C4C;
+  word-break: normal;
+}
+
+.view-objectives .courses-tabs .nav-tabs ul li.active::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #0D7DFC;
+}
+
+.view-objectives .courses-tabs .nav-tabs::before {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 46px;
+  width: 1px;
+  height: 570px;
+  background-color: #E9E9E9;
+}
+
+.view-objectives .courses-tabs .tab-content .pagination {
+  margin-top: 72px;
+  display: flex;
+  margin-left: 23.363%;
+  align-items: center;
+}
+
+.view-objectives .courses-tabs .tab-content .pagination .prev {
+  display: flex;
+  align-items: center;
+}
+
+.view-objectives .courses-tabs .tab-content .pagination .prev:hover {
+  cursor: pointer;
+}
+
+.view-objectives .courses-tabs .tab-content .pagination .next:hover {
+  cursor: pointer;
+}
+
+.view-objectives .courses-tabs .tab-content .pagination .prev a {
+  display: flex;
+  align-items: center;
+}
+
+.view-objectives .courses-tabs .tab-content .pagination .prev span {
+  font-family: "San Francisco Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 123.6%;
+  color: #0D7DFC;
+  margin-left: 12px;
+}
+
+.view-objectives .courses-tabs .tab-content .pagination .next {
+  display: flex;
+  align-items: center;
+  margin-left: 66px;
+}
+
+.view-objectives .courses-tabs .tab-content .pagination .next a {
+  display: flex;
+  align-items: center;
+}
+
+.view-objectives .courses-tabs .tab-content .pagination .next span {
+  font-family: "San Francisco Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 123.6%;
+  color: #0D7DFC;
+  margin-right: 12px;
+}
+
+//  CSS For Progress Tab
+.view-course .tab--content .view-course-progress .course-progress {
+  margin-top: 40px;
+}
+
 
 
 // Import component-specific sass files

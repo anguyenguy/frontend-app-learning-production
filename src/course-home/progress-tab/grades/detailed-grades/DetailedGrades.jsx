@@ -11,6 +11,7 @@ import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { faBroom } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useModel } from '../../../../generic/model-store';
+import { MdOutlineQuiz } from "react-icons/md";
 
 import DetailedGradesTable from './DetailedGradesTable';
 
@@ -81,7 +82,7 @@ function DetailedGrades({ intl }) {
     <>
       <div className="item--content progress-quiz" id="progress-quiz">
         <h3 className="progress-title d-flex">
-          <FontAwesomeIcon icon={faBroom} />Quiz
+          <MdOutlineQuiz style={{ width: '50px', height: '50px' }} />Quiz
         </h3>
         <div className="progress-item-content">
           {hasSectionScores && (

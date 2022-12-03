@@ -149,8 +149,8 @@ function Sequence({
   };
 
   const defaultContent = (
-    <div className="sequence-container d-inline-flex flex-row">
-      <div className={classNames('sequence w-100', { 'position-relative': shouldDisplayNotificationTriggerInSequence })}>
+    <div className="view-objectives">
+      <div className={classNames('courses-tabs', { 'position-relative': shouldDisplayNotificationTriggerInSequence })}>
         <SequenceNavigation
           sequenceId={sequenceId}
           unitId={unitId}
@@ -175,7 +175,7 @@ function Sequence({
         />
         {shouldDisplayNotificationTriggerInSequence && <SidebarTriggers />}
 
-        <div className="unit-container flex-grow-1">
+        <div className="tab-content">
           <SequenceContent
             courseId={courseId}
             gated={gated}

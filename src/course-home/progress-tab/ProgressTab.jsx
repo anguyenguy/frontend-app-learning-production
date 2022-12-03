@@ -54,7 +54,7 @@ function ProgressTab() {
         </div>
       </div> */}
       <div className="tab--item view-course-progress" id="view-course-progress">
-        <h2>Course Progress for (test10@funix.edu.vn)</h2>
+        <h2>Course Progress</h2>
         <div className="course-progress d-flex">
           <div className="tab-left">
             <DetailedGrades />

@@ -77,17 +77,6 @@ function LoadedTabPage({
       <main id="main-content" className="site-main d-flex flex-column flex-grow-1">
         <div className="view-course">
           <div className="container">
-            <div className="breadcrumbs-page">
-              <ul className="breadcrumbs">
-                <li style={{color: "#0D7DFC"}}>
-                  <a style={{marginRight: "15px"}} href={tabs[0].url.includes(".edu.vn") ? "https://lilac.funix.edu.vn" : "http://local.overhang.io:8000/"}>Course </a>
-                  <FontAwesomeIcon icon={faChevronRight} />
-                </li>
-                <li>
-                  <a href={tabs[0].url}>{title}</a>
-                </li>
-              </ul>
-            </div>
             <AlertList
               topic="outline"
               className="mx-5 mt-3"

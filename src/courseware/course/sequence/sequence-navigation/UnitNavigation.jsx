@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '@edx/paragon';
@@ -8,6 +12,7 @@ import {
 } from '@edx/frontend-platform/i18n';
 import { useSelector } from 'react-redux';
 
+import { FcPrevious, FcNext } from 'react-icons/fc';
 import { getCourseExitNavigation } from '../../course-exit';
 
 import UnitNavigationEffortEstimate from './UnitNavigationEffortEstimate';
@@ -32,24 +37,46 @@ function UnitNavigation({
     const disabled = isLastUnit && !exitActive;
     const nextArrow = isRtl(getLocale()) ? faChevronLeft : faChevronRight;
     return (
-      <Button
-        variant="outline-primary"
-        className="next-button d-flex align-items-center justify-content-center"
-        onClick={buttonOnClick}
-        disabled={disabled}
-      >
-        <UnitNavigationEffortEstimate sequenceId={sequenceId} unitId={unitId}>
-          {buttonText}
-        </UnitNavigationEffortEstimate>
-        <FontAwesomeIcon icon={nextArrow} className="ml-2" size="sm" />
-      </Button>
+      <div className="next">
+        <a
+          variant="outline-primary"
+          className="next-button d-flex align-items-center justify-content-center"
+          onClick={buttonOnClick}
+          disabled={disabled}
+        >
+          <span>Next</span>
+          <FcNext />
+        </a>
+      </div>
+      // <Button
+      //   variant="outline-primary"
+      //   className="next-button d-flex align-items-center justify-content-center"
+      //   onClick={buttonOnClick}
+      //   disabled={disabled}
+      // >
+      //   <UnitNavigationEffortEstimate sequenceId={sequenceId} unitId={unitId}>
+      //     {buttonText}
+      //   </UnitNavigationEffortEstimate>
+      //   <FontAwesomeIcon icon={nextArrow} className="ml-2" size="sm" />
+      // </Button>
     );
   };
 
   const prevArrow = isRtl(getLocale()) ? faChevronRight : faChevronLeft;
   return (
-    <div className="unit-navigation d-flex">
-      <Button
+    <div className="pagination">
+      <div className="prev">
+        <a
+          variant="outline-secondary"
+          className="previous-button mr-2 d-flex align-items-center justify-content-center"
+          disabled={isFirstUnit}
+          onClick={onClickPrevious}
+        >
+          <FcPrevious />
+          <span>Previous</span>
+        </a>
+      </div>
+      {/* <Button
         variant="outline-secondary"
         className="previous-button mr-2 d-flex align-items-center justify-content-center"
         disabled={isFirstUnit}
@@ -57,7 +84,7 @@ function UnitNavigation({
       >
         <FontAwesomeIcon icon={prevArrow} className="mr-2" size="sm" />
         {intl.formatMessage(messages.previousButton)}
-      </Button>
+      </Button> */}
       {renderNextButton()}
     </div>
   );
