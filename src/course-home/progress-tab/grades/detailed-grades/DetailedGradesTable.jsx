@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/order */
 import React from 'react';
 import { useSelector } from 'react-redux';
@@ -11,10 +12,9 @@ import { useModel } from '../../../../generic/model-store';
 // import { subscribe } from '@edx/frontend-platform';
 import { faCheck, faExclamation, faSpellCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { HiOutlineXMark } from "react-icons/hi2";
+import { HiOutlineXMark } from 'react-icons/hi2';
 
 function DetailedGradesTable({ intl }) {
-  console.log(intl);
   const {
     courseId,
   } = useSelector(state => state.courseHome);

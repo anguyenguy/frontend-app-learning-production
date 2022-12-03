@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-unused-vars */
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -32,7 +36,7 @@ function UnitButton({
       }, className)}
     >
       <a
-      onClick={handleClick}
+        onClick={handleClick}
       >
         {title}
         {showCompletion && complete ? <CompleteIcon size="sm" className="text-success ml-2" /> : null}

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { useSelector } from 'react-redux';
 
@@ -10,8 +11,8 @@ import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 // import { Hyperlink } from '@edx/paragon';
 import { faBroom } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { MdOutlineQuiz } from 'react-icons/md';
 import { useModel } from '../../../../generic/model-store';
-import { MdOutlineQuiz } from "react-icons/md";
 
 import DetailedGradesTable from './DetailedGradesTable';
 
@@ -19,7 +20,6 @@ import DetailedGradesTable from './DetailedGradesTable';
 
 function DetailedGrades({ intl }) {
   // const { administrator } = getAuthenticatedUser();
-  console.log(intl);
   const {
     courseId,
   } = useSelector(state => state.courseHome);

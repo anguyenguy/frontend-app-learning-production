@@ -12,13 +12,13 @@ import {
 } from '@edx/frontend-platform/i18n';
 
 import { useSelector } from 'react-redux';
+import { FcPrevious } from 'react-icons/fc';
 import { getCourseExitNavigation } from '../../course-exit';
 import UnitButton from './UnitButtonCustom';
 import SequenceNavigationTabs from './SequenceNavigationTabsCustom';
 import { useSequenceNavigationMetadata } from './hooks';
 import { useModel } from '../../../../generic/model-store';
 import { LOADED } from '../../../data/slice';
-import { FcPrevious } from 'react-icons/fc';
 
 import messages from './messages';
 /** [MM-P2P] Experiment */
