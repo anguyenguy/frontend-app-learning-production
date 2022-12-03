@@ -28,6 +28,8 @@ import CoursewareRedirectLandingPage from './courseware/CoursewareRedirectLandin
 import DatesTab from './course-home/dates-tab';
 import GoalUnsubscribe from './course-home/goal-unsubscribe';
 import ProgressTab from './course-home/progress-tab/ProgressTab';
+import BookmarksTab from './course-home/bookmarks-tab/BookmarksTab';
+import UpdatesTab from './course-home/updates-tab/UpdatesTab';
 import { TabContainer } from './tab-page';
 
 import { fetchDatesTab, fetchOutlineTab, fetchProgressTab } from './course-home/data';
@@ -54,6 +56,16 @@ subscribe(APP_READY, () => {
               <PageRoute path="/course/:courseId/home">
                 <TabContainer tab="outline" fetch={fetchOutlineTab} slice="courseHome">
                   <OutlineTab />
+                </TabContainer>
+              </PageRoute>
+              <PageRoute path="/course/:courseId/bookmarks">
+                <TabContainer tab="outline" fetch={fetchOutlineTab} slice="courseHome">
+                  <BookmarksTab />
+                </TabContainer>
+              </PageRoute>
+              <PageRoute path="/course/:courseId/updates">
+                <TabContainer tab="outline" fetch={fetchOutlineTab} slice="courseHome">
+                  <UpdatesTab />
                 </TabContainer>
               </PageRoute>
               <PageRoute path="/course/:courseId/live">

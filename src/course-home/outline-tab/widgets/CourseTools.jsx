@@ -61,11 +61,24 @@ function CourseTools({ intl }) {
     }
   };
 
+  const conrseToolsControled = [
+    {
+      analyticsId: 'edx.bookmarks',
+      title: 'Bookmarks',
+      url: `/learning/course/${courseId}/bookmarks`,
+    },
+    {
+      analyticsId: 'edx.updates',
+      title: 'Updates',
+      url: `/learning/course/${courseId}/updates`,
+    },
+  ];
+
   return (
     <section className="mb-4">
       <h2 className="h4">{intl.formatMessage(messages.tools)}</h2>
       <ul className="list-unstyled">
-        {courseTools.map((courseTool) => (
+        {conrseToolsControled.map((courseTool) => (
           <li key={courseTool.analyticsId} className="small">
             <a href={courseTool.url} onClick={() => logClick(courseTool.analyticsId)}>
               <FontAwesomeIcon icon={renderIcon(courseTool.analyticsId)} className="mr-2" fixedWidth />

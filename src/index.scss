@@ -943,7 +943,186 @@ h3 {
   margin-top: 40px;
 }
 
+// CSS For Bookmarks Tab
+#bookmarked h2 span {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  text-transform: capitalize;
+  color: #C4C4C4;
+  margin-left: 13px;
+}
 
+#bookmarked h2 {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 57px;
+  color: #333333;
+  margin-bottom: 21px;
+}
+
+#bookmarked .list-bookmark .list-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+#bookmarked .list-bookmark .list-item {
+  list-style: none;
+}
+
+#bookmarked .list-bookmark .list-item > a {
+  width: 100%;
+  padding: 24px 21px 20px 56px;
+  border: 1px solid #E3E2E2;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  position: relative;
+}
+
+#bookmarked .list-bookmark .list-item > a > svg {
+  color: #0D7DFC;
+  position: absolute;
+  font-size: 26px;
+  top: -1px;
+  line-height: 26px;
+  left: 20px;
+  height: 30px;
+  width: 30px;
+}
+
+#bookmarked .list-bookmark .list-item > a .text h4 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 36px;
+  color: #4C4C4C;
+  margin-bottom: 26px;
+}
+
+#bookmarked .list-bookmark .list-item > a .text p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #4C4C4C;
+  margin-bottom: 0;
+}
+
+#bookmarked .list-bookmark .list-item > a .link {
+  font-size: 30px;
+  display: flex;
+  line-height: 0;
+  align-items: center;
+}
+
+#bookmarked .list-bookmark .list-item > a .link svg{
+  height: 40px;
+  width: 40px;
+}
+
+#bookmarked .list-bookmark .list-item > a .link::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: #E9E9E9;
+  margin-right: 20px;
+}
+
+.date {
+  font-weight: 500;
+}
+
+#bookmarked .pagination{
+  margin-left: 23.363%;
+}
+
+#bookmarked .pagination {
+  margin-top: 72px;
+  display: flex;
+  align-items: center;
+}
+
+#bookmarked .pagination .prev {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#bookmarked .pagination .prev a {
+  display: flex;
+  align-items: center;
+}
+
+#bookmarked .pagination .prev span {
+  margin-left: 12px;
+}
+
+#bookmarked .pagination .prev span {
+  font-family: "San Francisco Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 123.6%;
+  color: #0D7DFC;
+}
+
+#bookmarked .pagination .next {
+  margin-left: 66px;
+  cursor: pointer;
+}
+
+#bookmarked .pagination .next {
+  display: flex;
+  align-items: center;
+}
+
+#bookmarked .pagination .next span {
+  margin-right: 12px;
+}
+
+#bookmarked .pagination .next span {
+  font-family: "San Francisco Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 123.6%;
+  color: #0D7DFC;
+}
+
+#bookmarked .pagination .unactive {
+  cursor: not-allowed;
+  color: #2B3A55;
+}
+
+#bookmarked .pagination .unactive span {
+  cursor: not-allowed;
+  color: #2B3A55;
+}
+
+#bookmarked {
+  padding-bottom: 50px;
+}
+
+// CSS for Updates Tab
+#update h2 {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 57px;
+  color: #333333;
+  margin-bottom: 26px;
+}
+
+#update .content {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 31px;
+  color: #333333;
+  padding-bottom: 72px;
+}
+
+#update .content p:not(:last-child) {
+  margin-bottom: 30px;
+}
 
 // Import component-specific sass files
 @import "courseware/course/celebration/CelebrationModal.scss";
